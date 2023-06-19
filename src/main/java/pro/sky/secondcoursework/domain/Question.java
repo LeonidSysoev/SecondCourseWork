@@ -38,4 +38,9 @@ public class Question {
                 ", answer='" + answer + '\'' +
                 '}';
     }
+
+//    public String QuestionAndAnswer(String question, String answer) {
+//        return question + ' ' + answer;
+//
+//    }
 }
