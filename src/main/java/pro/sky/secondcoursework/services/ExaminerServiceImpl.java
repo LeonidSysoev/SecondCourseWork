@@ -9,7 +9,7 @@ import java.util.*;
 @Service
 
 public class ExaminerServiceImpl implements ExaminerService {
-    QuestionService questionService;
+    private QuestionService questionService;
 
 
     public ExaminerServiceImpl(QuestionService questionService) {
@@ -20,12 +20,11 @@ public class ExaminerServiceImpl implements ExaminerService {
     @Override
     public Collection<Question> getQuestions(int amount) {
         Set<Question> questionList = new HashSet<>(amount);
-
+        if (amount > questionService.getAll().size()) {
+            throw new NumbersElementNotCorrectException();
+        }
         for (int i = 0; i < amount; i++) {
             questionList.add(questionService.getRandomQuestion());
-            if (amount > questionService.getAll().size()) {
-                throw new NumbersElementNotCorrectException();
-            }
         }
         return questionList;
 

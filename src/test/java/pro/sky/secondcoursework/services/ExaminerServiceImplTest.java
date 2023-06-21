@@ -42,8 +42,8 @@ class ExaminerServiceImplTest {
                         new Question("question1", "answer1"),
                         new Question("question2", "answer2"));
         var actual = service.getQuestions(2);
-        //verify(javaQuestionServiceMock,times(3)).getRandomQuestion();
         assertEquals(2, actual.size());
+        verify(javaQuestionServiceMock,times(2)).getRandomQuestion();
     }
     @Test
     void numbersElementNotCorrectExceptionTest() {

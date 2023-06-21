@@ -12,7 +12,7 @@ import java.util.*;
 
 public class JavaQuestionService implements QuestionService {
 
-    Set<Question> questions;
+    private Set<Question> questions;
 
     public JavaQuestionService() {
         this.questions = new HashSet<>();
